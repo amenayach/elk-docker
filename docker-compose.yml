@@ -44,6 +44,17 @@ services:
       - Elasticsearch  
     networks:
       - elk
+
+  NxLog:
+    image: nxlog/nxlog-ce:latest
+    container_name: nxlog
+    restart: always  
+    volumes:
+    - ./nxlog:/etc/nxlog
+    depends_on:
+      - Kibana  
+    networks:
+      - elk
 volumes:
   elastic_data: {}
 
