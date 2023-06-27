@@ -52,7 +52,7 @@ services:
     volumes:
     - ./nxlog:/etc/nxlog
     depends_on:
-      - Kibana  
+      - Logstash
     networks:
       - elk
 volumes:
